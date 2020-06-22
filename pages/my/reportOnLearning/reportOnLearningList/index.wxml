@@ -1,0 +1,9 @@
+<view class="reportOnLearning">
+  <view class="item" wx:for="{{StudyReportList}}" wx:key="index" data-project="{{item}}" bindtap="viewStudyReport">
+    <view class="title">{{item.name}}</view>
+    <view class="state">
+      <van-tag type="{{item.status=='已结束' ? 'warning' : 'success' }}">{{item.status}}</van-tag>
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

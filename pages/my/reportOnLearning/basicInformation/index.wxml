@@ -1,0 +1,44 @@
+<view class="studentBasicInfo">
+	<view class="item">
+		<view class="title">个人基本信息</view>
+		<van-cell-group>
+			<van-field value="{{myDetail.name}}" label="姓名：" readonly />
+			<van-field value="{{myDetail.sex}}" label="性别：" readonly />
+			<van-field value="{{myDetail.idCard}}" label="身份证号：" readonly />
+			<van-field value="{{myDetail.birthday}}" label="出生日期：" readonly />
+			<van-field value="{{myDetail.tel}}" label="联系电话：" readonly />
+			<van-field value="{{myDetail.education}}" label="学历：" readonly />
+			<van-field value="{{myDetail.email}}" label="邮箱：" readonly />
+		</van-cell-group>
+	</view>
+	<view class="item">
+		<view class="title">项目基本信息</view>
+		<van-cell-group>
+			<van-field value="{{myDetail.projectName}}" label="项目名称：" readonly />
+			<van-field value="{{myDetail.type}}" label="项目类型：" readonly />
+			<van-field value="{{myDetail.recruitStudentsNumbers}}" label="招生人数：" readonly />
+			<van-field value="{{myDetail.recruitStudentsStartDate}}" label="报名时间：" readonly />
+			<van-field value="{{myDetail.trainingPeriod}}" label="培训时间：" readonly />
+			<van-field value="{{myDetail.planningTotalHours}}" label="项目课时：" readonly />
+			<van-field value="{{myDetail.planningStudyTotalDuration}}" label="计划学时：" readonly />
+			<van-field value="{{myDetail.actualStudyTotalDuration}}" label="实际学时：" readonly />
+			<van-field value="{{myDetail.charge}}" label="培训费用：" readonly />
+			<van-field value="{{myDetail.class}}" label="所在班级：" readonly />
+		</van-cell-group>
+	</view>
+	<view class="item">
+		<view class="title">培训课程</view>
+		<van-cell-group wx:for="{{myDetail.courses}}" wx:key="index">
+			<view style="text-align: center;font-weight: 600;font-size: 15px;margin-top: 20rpx;">{{item.name}}</view>
+			<!-- <van-field value="{{item.achieved ? '已完成' : '未完成'}}" label="是否已完成学习：" readonly /> -->
+			<view class="isAccomplish">
+				<view style="max-width: 224rpx;min-width: 180rpx;">是否已完成学习：</view>
+				<view wx:if="{{item.achieved}}"><van-tag type="primary">已完成</van-tag></view>
+        <view wx:else><van-tag type="danger">未完成</van-tag></view>
+			</view>
+			<van-field value="{{item.planningStudyDuration}}" label="要求学习时长：" readonly />
+			<van-field value="{{item.actualStudyDuration}}" label="实际学习时长：" readonly />
+			<van-field value="{{item.teacher}}" label="主讲教师：" readonly />
+		</van-cell-group>
+	</view>
+</view>

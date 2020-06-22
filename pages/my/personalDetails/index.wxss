@@ -1,0 +1,46 @@
+/* pages/my/personalDetails/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.myInfo{
+  width: 100%;
+  height: 100%;
+}
+.header{
+  width: 100%;
+  height: 260rpx;
+  padding-top: 50rpx;
+}
+.headerImg{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.headerImg image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.field-index--van-field{
+  height: 100rpx;
+  border-bottom: 1rpx solid #e1e2e3;
+}
+.photoWall{
+  width: 100%;
+  height: auto;
+  border-bottom: 1rpx solid #e1e2e3;
+}
+.photoWall .title{
+  max-width: 90px;
+  min-width: 90px;
+  line-height: 100rpx;
+  font-size: 14px;
+  color: #323233;
+  margin-left: 16px;
+  float: left;
+}
+.van-cell__value{
+  text-align: center !important;
+}

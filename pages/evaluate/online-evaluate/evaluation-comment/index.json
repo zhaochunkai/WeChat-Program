@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-rate": "/ui-lib/vant/rate/index", 
+    "van-cell-group": "/ui-lib/vant/cell-group/index", 
+    "van-field": "/ui-lib/vant/field/index", 
+    "van-tag": "/ui-lib/vant/tag/index",
+    "van-button": "/ui-lib/vant/button/index"
+  }
+}

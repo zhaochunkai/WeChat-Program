@@ -1,0 +1,44 @@
+<view class="page">
+  <!-- 评价详情 -->
+  <view class="plan-list" wx:for="{{courseList}}" wx:key="index" wx:for-item="name">
+    <view class="m-info">
+      <text class="name">{{name[1]}}：</text>
+      <text class="value" wx:if="{{name[0] == 'hasBeenEvaluated'}}">{{evaluationPlanInfo[name[0]]?'是':'否'}}</text>
+      <text class="value" wx:else>{{evaluationPlanInfo[name[0]]}}</text>
+    </view>
+  </view>
+  <!-- 指标 -->
+  <view class="indicators-list" wx:for="{{indicators}}" wx:key="index" wx:for-item="item">
+    <view>
+      <van-tag size="large" color="#f2826a" plain>{{item.evaluationIndicatorName}}</van-tag>
+      <van-rate custom-class="rate-class"
+        readonly="{{evaluationPlanInfo.hasBeenEvaluated}}"
+        data-item="{{item}}"
+        value="{{ item.score }}"
+        size="{{ 24 }}"
+        allow-half
+        void-color="#eee"
+        void-icon="star"
+        bind:change="onChangeRate"
+      />
+      <text class="rate-score">{{item.score}} 分</text>
+    </view>
+    <view class="description" wx:if="{{item.indicatorDescription}}">{{item.indicatorDescription}}</view>
+  </view>
+  <!-- 自定义评价 -->
+  <!-- content -->
+  <van-cell-group>
+    <van-field
+      disabled="{{evaluationPlanInfo.hasBeenEvaluated}}"
+      value="{{ evaluationPlanInfo.content }}"
+      label="评价内容"
+      required
+      type="textarea"
+      placeholder="请输入评价内容"
+      autosize
+      border="{{ true }}"
+      bind:change="onChangeContent"
+    />
+  </van-cell-group>
+  <van-button wx:if="{{!evaluationPlanInfo.hasBeenEvaluated}}" type="primary" block bindtap="save">提交评价</van-button>
+</view>

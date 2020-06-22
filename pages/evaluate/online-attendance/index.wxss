@@ -1,0 +1,9 @@
+/* pages/evaluate/online-attendance/index.wxss */
+.attendance{
+  padding: 0 10px;
+}
+.sign{
+  font-size: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}

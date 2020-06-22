@@ -1,0 +1,64 @@
+/* pages/online-study/study/index.wxss */
+/* pages/online-study/on-live/index.wxss */
+/* .page{
+  padding: 0 20px;
+} */
+.page .header{
+  height: 40px;
+  background-color: #ccc;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 20px;
+  line-height: 40px;
+}
+.page .card{
+  box-sizing: border-box;
+  width: 100%;
+  height: 120px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  display:flex;
+  flex-direction:row ;
+}
+.page .card .img{
+  width: 100px;
+  height: 100px;
+  margin: 10px 10px;
+}
+.page .card .img image{
+  width: 100%;
+  height: 100%;
+}
+.page .card .content{
+  padding: 10px 0;
+  width:calc(100% - 120px);
+}
+.page .card .content .title{
+  font-size: 16px;
+  color: #00cc66;
+  font-size: 600;
+  width: 100%;
+  margin-top: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+}
+.panel-index--van-panel__header-value{
+  color: #ccc !important;
+}
+.page .card .content .dec{
+  padding: 0 20px;
+  width: 85%;
+  margin-top: 13px;
+}
+.decs{
+  font-size: 10px;
+  padding-right: 10px;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  color: #fff;
+}

@@ -1,0 +1,20 @@
+/* pages/my/reportOnLearning/basicInformation/index.wxss */
+.item{
+  padding: 20rpx;
+}
+.item .title{
+  font-weight: 600;
+  background-color: #e2eeff;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx 32rpx;
+  overflow: hidden;
+  color: #323233;
+  font-size: 14px;
+  line-height: 48rpx;
+}
+.van-cell__title{
+  max-width: 224rpx !important;
+}

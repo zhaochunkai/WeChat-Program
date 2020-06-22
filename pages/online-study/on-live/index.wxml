@@ -1,0 +1,30 @@
+<view class='page'>
+<!-- 提示信息 -->
+	<view wx:if="{{hint}}" style="text-align: center;margin: 20px 0;">列表中还没有直播数据哦</view>
+	<block wx:for="{{chatLiveRooms}}" wx:key="live" wx-item="item">
+		<!-- card卡片 -->
+		<view class="card" data-livefacetime="{{item.liveFaceAttendanceCycle}}" bindtap="redirectDetailClick" data-liveroom="{{item}}" data-liveid="{{item.id}}">
+			<!-- 左边图片 -->
+			<view class="img">
+				<image src="{{src}}"></image>
+			</view>
+			<!-- 右边内容区 -->
+			<view class="content">
+				<!-- 内容区头部 -->
+				<view class="top">
+					<view class="image">
+						<image src="../../../images/zb.png"></image>
+					</view>
+					<view class="name">{{item.liveRoomStatus}}</view>
+					<view class="go">进入直播 ➤</view>
+				</view>
+				<!-- 内容区标题 -->
+				<view class="title">{{item.title}}</view>
+				<view class="time">开始时间:{{item.planStartTime}}</view>
+				<!-- 介绍区域 -->
+				<view class="dec">讲师:{{item.anchor}}</view>
+			</view>
+		</view>
+	</block>
+</view>
+<van-dialog id="van-dialog" />

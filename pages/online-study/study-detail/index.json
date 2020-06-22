@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-tab": "/ui-lib/vant/tab/index",
+    "van-tabs": "/ui-lib/vant/tabs/index",
+    "van-collapse": "/ui-lib/vant/collapse/index",
+    "van-collapse-item": "/ui-lib/vant/collapse-item/index",
+    "van-cell": "/ui-lib/vant/cell/index",
+    "van-cell-group": "/ui-lib/vant/cell-group/index",
+    "van-tag": "/ui-lib/vant/tag/index",
+    "van-icon": "/ui-lib/vant/icon/index"
+  }
+}

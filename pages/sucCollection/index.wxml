@@ -1,0 +1,11 @@
+<view class="success">
+	<view class="s_content"  wx:if="{{flage1}}">
+		<image class="c_img" src="../../images/authentication/icon3.png"></image>
+		<!-- <image class="c_img" src="{{src}}"></image> -->
+		<view class="c_title">证件照采集对比成功</view>
+	</view>
+	<view class="f_content"  wx:if="{{flage2}}">
+		<image class="f_img" src="../../images/authentication/icon4.png"></image>
+		<view class="f_title">{{error}}</view>
+	</view>
+</view>

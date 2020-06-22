@@ -1,0 +1,28 @@
+<!-- <van-tabs active="{{ active }}" bind:change="onChange">
+	<van-tab title="全部" name="All">
+		<view class="card"></view>
+	</van-tab>
+	<van-tab title="今天" name="Today">444</van-tab>
+	<van-tab title="本周" name="Week">444</van-tab>
+	<van-tab title="本月" name="Month"></van-tab>
+</van-tabs> -->
+<view class="page">
+  <van-row>
+    <van-col span="24" wx:for="{{evaluationPlanList}}" wx:key="index" wx:for-item="item">
+      <view class="m-border-bottom m-items">
+        <view class="plan-list" wx:for="{{courseList}}" wx:key="index" wx:for-item="name">
+          <view class="m-info" wx:if="{{name[0] === 'hasBeenEvaluated'}}">
+            <van-button wx:if="{{item.hasBeenEvaluated}}" type="info" block bindtap="toEvaluate" data-item="{{item}}">查看评价</van-button>            
+            <van-button wx:else type="primary" block bindtap="toEvaluate" data-item="{{item}}">开始评价</van-button>            
+            <!-- <van-button type="primary" block bindtap="toEvaluate" data-item="{{item}}" class="{{item.hasBeenEvaluated==false?'m-btn':'m-btn m-btn-dark'}}">{{!item.hasBeenEvaluated?'开始评价':'查看评价'}}</van-button>             -->
+          </view>
+          <view class="m-info" wx:else>
+            <text class="name">{{name[1]}}：</text>
+            <text class="value">{{item[name[0]]}}</text>
+          </view>
+       </view>
+      </view>
+    </van-col>
+  </van-row>
+  <view style="text-align:center;margin:2rem 0;" wx:if="{{evaluationPlanList.length === 0}}">列表中还没有评价数据哦</view>
+</view>

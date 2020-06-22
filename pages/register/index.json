@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-field": "/ui-lib/vant/field/index",
+    "van-button": "/ui-lib/vant/button/index",
+    "van-dropdown-menu": "/ui-lib/vant/dropdown-menu/index",
+  "van-dropdown-item": "/ui-lib/vant/dropdown-item/index"
+  },
+  "navigationBarTitleText": "绑定中心"
+}

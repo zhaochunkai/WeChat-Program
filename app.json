@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/examination-module/official-examination/index",
+    "pages/examination-module/simulation-examination/index",
+    "pages/examination-module/supply-examination/index",
+    "pages/examination-module/examination-paper/index",
+    "pages/examination-module/examination-record-list/index",
+    "pages/examination-module/examination-record-list/examination-paper-result/index",
+    "pages/online-study/on-live/index",
+    "pages/online-study/enroll-in/enter-name/index",
+    "pages/online-study/enroll-in/index/index",
+    "pages/online-study/onlive-detail/index",
+    "pages/online-study/study/index",
+    "pages/evaluate/index",
+    "pages/evaluate/online-attendance/index",
+    "pages/evaluate/online-evaluate/index",
+    "pages/evaluate/online-evaluate/evaluation-comment/index",
+    "pages/online-study/study-detail/index",
+    "pages/online-study/course/index",
+    "pages/online-study/content/index",
+    "pages/online-study/content-detail/index",
+    "pages/recognition/index",
+    "pages/online-study/exercise/index",
+    "pages/register/index",
+    "pages/bindingInformation/index",
+    "pages/Verified/index",
+    "pages/sucCollection/index",
+    "pages/my/personalDetails/index",
+    "pages/my/reportOnLearning/reportOnLearningList/index",
+    "pages/my/index/index",
+    "pages/my/reportOnLearning/SummaryOfStudyReport/index",
+    "pages/my/reportOnLearning/basicInformation/index",
+    "pages/my/reportOnLearning/liveToLearn/index",
+    "pages/my/reportOnLearning/onLineStudy/index",
+    "pages/online-study/onlinePracticeTopic/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "在线培训平台",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#A1A5A2",
+    "selectedColor": "#1B2A35",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "在线学习",
+        "iconPath": "images/tab-bar-icon/online-study.png",
+        "selectedIconPath": "images/tab-bar-icon/online-study-click.png"
+      },
+      {
+        "pagePath": "pages/evaluate/index",
+        "text": "考勤评价",
+        "iconPath": "images/tab-bar-icon/evaluate.png",
+        "selectedIconPath": "images/tab-bar-icon/evaluate-click.png"
+      },
+      {
+        "pagePath": "pages/my/index/index",
+        "text": "我的",
+        "iconPath": "images/tab-bar-icon/my.png",
+        "selectedIconPath": "images/tab-bar-icon/my-click.png"
+      }
+    ]
+  }
+}

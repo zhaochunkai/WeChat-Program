@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-dialog": "/ui-lib/vant/dialog/index",
+    "van-button": "/ui-lib/vant/button/index",
+    "van-icon": "/ui-lib/vant/icon/index",
+    "van-radio": "/ui-lib/vant/radio/index",
+    "van-radio-group": "/ui-lib/vant/radio-group/index"
+  },
+  "disableScroll": true
+}

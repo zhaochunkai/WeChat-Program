@@ -1,0 +1,53 @@
+.page{
+  font-size: 14px;
+}
+.examPaperHeader{
+  padding:2rem 10px;
+  background-color: #eff9fa;
+}
+.course-name{
+  color: #04a0f0;
+  font-weight: bold;
+  font-size: 15px;
+}
+/* .examPaperContent{
+  padding:10px;
+} */
+.question-type-list{
+  margin-top:1rem;
+}
+.question-type-name{
+  font-size: 16px;
+  font-weight: 600;
+  background-color:#e5f2f3;
+  padding:1rem;
+}
+.question-list{
+  padding:10px;
+}
+.question-title{
+  font-size: 15px;
+  margin-bottom: 8px;
+  padding: 10px 0;
+  display: flex;  
+}
+.optionNumber{
+  margin-right:6px;
+}
+.optionContent img{
+  display: block;
+  max-width:95%;
+  max-height:200%;
+}
+.question-checkbox,
+.van-radio{
+  margin: 20rpx 0;
+}
+.van-radio__label--right{
+  display: inherit;
+  line-height: 50rpx !important;
+}
+.van-checkbox__label{
+  display: inherit;
+  line-height: 50rpx !important;
+}

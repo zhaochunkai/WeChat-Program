@@ -1,0 +1,36 @@
+<view class='page'>
+	<van-cell-group>
+		<van-field required value="{{projectName}}" label="学习项目" readonly />
+
+		<van-field value="{{ name }}" required clearable label="姓名" placeholder="请输入姓名" error-message='{{ nameRuls }}' bind:click-icon="onClickIcon" bind:blur='nameRule' maxlength='128' />
+
+		<van-field value="{{sexName}}" label="性别" placeholder="请选择性别" required readonly bindtap='sexbtn' />
+
+		<van-action-sheet show="{{ sexbtn }}" actions="{{ gender }}" bind:close="sexonClose" bind:select="sexonSelect" />
+
+		<van-field value="{{ idCard }}" label="身份证" maxlength="18" placeholder="请输入身份证号码" bind:blur='idCardRuls' error-message='{{ idCardRuls }}' required />
+
+		<van-field value="{{ birthday }}" label="出生日期" placeholder="根据身份证号自动生成" required readonly />
+
+		<van-field value="{{ tel }}" label="联系电话" placeholder="请输入联系电话" maxlength="11" required bind:blur='telRuls' error-message='{{ telRuls }}' />
+
+		<van-field value="{{ educationName }}" label="学历" placeholder="请选择学历" required readonly bindtap="block" />
+
+		<van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelect" />
+
+		<van-field value="{{ address }}" label="住址" placeholder="请输入住址" bind:blur='address' />
+
+		<view style="display:none">
+			<view class="update">请上传头像：</view>
+			<van-uploader file-list="{{ fileList }}" max-count="1" bind:after-read="afterRead" />
+		</view>
+
+		<van-field value="{{ email }}" label="邮箱" placeholder="请输入邮箱" bind:blur='email' />
+
+		<van-field value="{{ remark }}" label="备注" placeholder="请输入备注" bind:blur='remark' />
+	</van-cell-group>
+	<view class="footer">
+		<van-button plain type="primary" size='small' custom-style='margin-right:100px;width:100px;' bindtap="cancel">取消</van-button>
+		<van-button plain type="info" size='small' custom-style='width:100px;' bind:click="commitDataClick">提交</van-button>
+	</view>
+</view>

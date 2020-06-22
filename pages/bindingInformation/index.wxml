@@ -1,0 +1,14 @@
+<view class="bindingInformation">
+	<view class="item">
+		<view class="portraitCapture" bindtap="facePage">
+			<image class="p_img" src="../../images/authentication/icon1.png"></image>
+			<view class="p_center">人像采集</view>
+			<van-icon name="arrow" class="p_right"/>
+		</view>
+		<view class="Verified"  bindtap="PageJump">
+			<image class="v_img" src="../../images/authentication/icon2.png"></image>
+			<view class="v_center">实名认证</view>
+			<van-icon name="arrow" class="p_right" class="v_right"/>
+		</view>
+	</view>
+</view>

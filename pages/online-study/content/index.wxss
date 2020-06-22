@@ -1,0 +1,73 @@
+/* pages/online-study/content/index.wxss */
+.header{
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.header-decs{
+  padding: 20px 10px;
+  overflow: hidden;
+}
+.header-decs .left{
+  width: 70%;
+  float: left;
+}
+.header-decs .left view{
+  font-size: 14px;
+  color: #666;
+}
+.header-decs .right{
+  width: 20%;
+  float: right;
+}
+.title{
+  height: 40px;
+  background-color: #E6E6E6;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 20px;
+  line-height: 40px;
+}
+.card{
+  height: 130px;
+  margin: 15px;
+  border-radius: 5px;
+  background-color: #1183a0;
+  box-shadow: 0px 0px 5px #000;
+}
+.card .card-title{
+  text-align: center;
+  padding: 3px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.card .card-dec{
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.card-decs{
+  padding: 10px 10px;
+  overflow: hidden;
+}
+.card-decs .left{
+  width: 70%;
+  float: left;
+}
+.card-decs .left view{
+  font-size: 14px;
+  color: #000;
+}
+.card-decs .right{
+  width: 20%;
+  float: right;
+}
+.but{
+  position: absolute;
+  top: 0;
+  right: 50rpx;
+}

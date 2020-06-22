@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-dialog": "/ui-lib/vant/dialog/index"
+  }
+}

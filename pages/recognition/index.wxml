@@ -1,0 +1,11 @@
+<camera wx:if="{{face}}" mode="normal" device-position="front" flash="auto" binderror="error">
+	<cover-view class="controls">
+		<cover-image class="img" src="../../images/notice.png" />
+		<cover-image class="wire" animation="{{ani}}" style="top:{{top}}px;" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1826790105,2777672711&fm=26&gp=0.jpg" />
+	</cover-view>
+	<cover-view class="noticeTXT">请将头部放入框内，3秒后自动进行识别</cover-view>
+	<cover-view class="count">{{count}}</cover-view>
+</camera>
+<van-dialog id="van-dialog" />
+<!-- <button type="primary" bindtap="takePhoto">识别</button> -->
+<!-- <image mode="widthFix" src="{{src}}"></image> -->

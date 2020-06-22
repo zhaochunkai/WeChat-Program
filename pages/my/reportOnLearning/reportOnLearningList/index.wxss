@@ -1,0 +1,19 @@
+/* pages/my/reportOnLearning/index/index.wxss */
+.item{
+  height: 80rpx;
+  border-bottom: 1rpx solid #eee;
+  line-height: 80rpx;
+  font-size: 14px;
+  color: #666;
+  padding: 0 10rpx;
+  display: flex;
+}
+.item .title{
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+.item .state{
+  width: 15%;
+}

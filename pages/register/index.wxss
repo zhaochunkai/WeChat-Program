@@ -1,0 +1,13 @@
+/* pages/register/index.wxss */
+.Select{
+  float: left;
+  padding: 0 15px;
+  max-width: 90px;
+  min-width: 90px;
+  font-size: 12px;
+  line-height: 50px;
+  color: 12px;
+}
+.van-dropdown-menu{
+  float: left;
+}

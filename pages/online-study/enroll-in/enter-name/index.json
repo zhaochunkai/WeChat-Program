@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "开始报名",
+  "usingComponents": {
+    "van-field": "/ui-lib/vant/field/index",
+    "van-action-sheet": "/ui-lib/vant/action-sheet/index",
+    "van-uploader": "/ui-lib/vant/uploader/index",
+    "van-button": "/ui-lib/vant/button/index",
+    "van-toast": "/ui-lib/vant/toast/index"
+  }
+}

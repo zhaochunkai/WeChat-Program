@@ -1,0 +1,16 @@
+/* pages/official-examination/index.wxss */
+.page{
+  font-size: 14px;
+}
+.course-item{
+  color: #333;
+}
+.course-name{
+  color: #04a0f0;
+  font-weight: bold;
+  font-size: 15px;
+}
+.course-btm{
+  display: flex;
+  justify-content: space-between;
+}

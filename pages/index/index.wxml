@@ -1,0 +1,75 @@
+<!-- 整个页面 -->
+<view class="wrapper">
+	<!-- 顶部图片 -->
+	<view class="banner-top-wrapper">
+		<image src="{{topBannerPath}}" class="banner-top-img"></image>
+	</view>
+	<!-- 项目Node -->
+	<view class="content">
+		<view style="display: flex;flex-direction: row;justify-content:space-around;flex-wrap:wrap;">
+			<view class="project" bindtap="redirectPage" data-value="paythefees">
+				<image src="{{paythefeesPath}}" class="project-img"></image>
+				<view>报名缴费</view>
+			</view>
+			<view class="project" bindtap="redirectPage" data-value="onLineStudy">
+				<image src="{{onLineStudyPath}}" class="project-img"></image>
+				<view>在线学习</view>
+			</view>
+			<view class="project" bindtap="redirectPage" data-value="onLive">
+				<image src="{{onLivePath}}" class="project-img"></image>
+				<view>在线直播</view>
+			</view>
+			<view class="project" bindtap="redirectPage" data-value="officialExam">
+				<image src="{{officialExamPath}}" class="project-img"></image>
+				<view>正式考试</view>
+			</view>
+			<view class="project" bindtap="redirectPage" data-value="simulationExam">
+				<image src="{{simulationExamPath}}" class="project-img"></image>
+				<view>模拟考试</view>
+			</view>
+			<view class="project" bindtap="redirectPage" data-value="supplyExam">
+				<image src="{{supplyExamPath}}" class="project-img"></image>
+				<view>补考安排</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="authorization" wx:if="{{userInfo}}">
+	<view class="img">
+		<image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3808452032,3233635323&fm=26&gp=0.jpg"></image>
+	</view>
+	<view class="title">微信授权登录</view>
+	<view class="details">
+		我们请求获得你的授权允许，只收集你在微信自愿提供的昵称、头像等信息，为你创建账户、报名、直播聊天等。
+	</view>
+	<button bindtap="bindGetUserInfo" open-type="getUserInfo" class="butt">好的</button>
+	<view class="but">好的</view>
+</view>
+<van-dialog id="van-dialog" />
+
+<view class="selectbg" wx:if="{{selectFlag}}">
+	<view class="selectLessee">
+		<view class="header">
+			<view class="search">
+				<view class="input">
+					<input bindinput="bindKeyInput" value="{{input}}" placeholder="请输入机构名称过滤"></input>
+				</view>
+				<view class="button">
+					<van-button type="primary" size="small" catchtap="searching">检索</van-button>
+				</view>
+				<view class="del" catchtap="empty">
+					<van-icon name="delete" custom-style="line-height: 30px;margin-left:10px;" />清空
+				</view>
+			</view>
+		</view>
+		<view class="main">
+			<van-radio-group wx:for="{{tenantList}}" wx:key="index" value="{{ radio }}" bind:change="onChange">
+				<van-radio name="{{item.id}}">{{item.name}}</van-radio>
+			</van-radio-group>
+		</view>
+		<view class="footer">
+			<van-button square custom-style="height:30px;" type="primary" catchtap="confirm">确定</van-button>
+		</view>
+	</view>
+</view>

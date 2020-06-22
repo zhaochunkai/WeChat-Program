@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-popup": "/ui-lib/vant/popup/index"
+  }
+}

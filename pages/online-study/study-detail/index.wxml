@@ -1,0 +1,105 @@
+<view class='page'>
+	<!-- 头部 -->
+	<view class='header'>
+		<view class="title">{{courseInfo.name}}</view>
+		<view class="dec">{{courseInfo.duration}}</view>
+	</view>
+	<!-- 列表 -->
+	<van-tabs active="b">
+		<van-tab title="课程介绍" name="a">
+			<view class="description" wx:if="{{ courseInfo.description != null}}">{{courseInfo.description}}</view>
+		</van-tab>
+		<van-tab title="学习" name="b">
+			<view class="directoryTree">
+				<view class="card" wx:for="{{chapters}}" wx:key="index" data-level="{{item.level}}" data-name="{{item.label}}" catchtap="gotoStudy" data-knowledgepointid="{{item.id}}">
+					<!-- 章 -->
+					<view class="chapter item">
+						<block wx:if="{{item.level[1] == 'False' }}" class="labelName">
+							<view class="leftIcon">
+								<van-icon custom-style="float:left;margin-right:5px;" name="/images/call.png" />
+							</view>
+							<view class="title">{{item.label}}</view>
+						</block>
+						<block wx:else class="labelName">
+							<view class="leftIcon">
+								<van-icon custom-style="float:left;margin-right:5px;" name="/images/call.png" />
+							</view>
+							<van-tag type="warning" wx:if="{{item.level[2] == '0'}}">未学习</van-tag>
+							<van-tag type="success" wx:elif="{{item.level[2] == '100'}}">已完成</van-tag>
+							<van-tag type="primary" wx:else>{{item.level[2]}}%</van-tag>
+							<view class="title">{{item.label}}</view>
+						</block>
+						<view class="icon" data-chapterid="{{item.id}}" catchtap="getSectionChildren">
+							<van-icon size="16px" name="arrow-down" />
+						</view>
+					</view>
+					
+					<view class="node" wx:for="{{item.children}}" wx:key="index" data-level="{{item.level}}" data-name="{{item.label}}" catchtap="gotoStudy" data-knowledgepointid="{{item.id}}">
+						<!-- 节 -->
+					<view class="knob">
+						<block wx:if="{{item.level[1] == 'False' }}" class="labelName">
+							<view class="leftIcon">
+								<van-icon custom-style="float:left;margin-right:5px;" name="/images/call.png" />
+							</view>
+							<view class="title">{{item.label}}</view>
+						</block>
+						<block wx:else class="labelName">
+							<view class="leftIcon">
+								<van-icon custom-style="float:left;margin-right:5px;" name="/images/call.png" />
+							</view>
+							<van-tag type="warning" wx:if="{{item.level[2] == '0'}}">未学习</van-tag>
+							<van-tag type="success" wx:elif="{{item.level[2] == '100'}}">已完成</van-tag>
+							<van-tag type="primary" wx:else>{{item.level[2]}}%</van-tag>
+							<view class="title">{{item.label}}</view>
+						</block>
+						<view class="icon" catchtap="getKnowledgePointChildren" data-sectionid="{{item.id}}">
+							<van-icon size="16px" name="arrow-down" />
+						</view>
+					</view>
+					<!-- 知识点 -->
+					<view class="knowledgePoint item" data-level="{{item.level}}" data-name="{{item.label}}" catchtap="gotoStudy" data-knowledgepointid="{{item.id}}" wx:for="{{item.children}}" wx:key="index">
+						<block wx:if="{{item.level[1] == 'False' }}" class="labelName">
+							<view class="leftIcon">
+								<van-icon custom-style="float:left;margin-right:5px;" name="/images/call.png" />
+							</view>
+							<view class="title">{{item.label}}</view>
+						</block>
+						<block wx:else class="labelName">
+							<view class="leftIcon">
+								<van-icon custom-style="float:left;margin-right:5px;" name="/images/call.png" />
+							</view>
+							<van-tag type="warning" wx:if="{{item.level[2] == '0'}}">未学习</van-tag>
+							<van-tag type="success" wx:elif="{{item.level[2] == '100'}}">已完成</van-tag>
+							<van-tag type="primary" wx:else>{{item.level[2]}}%</van-tag>
+							<view class="title">{{item.label}}</view>
+						</block>
+					</view>
+					</view>
+					
+				</view>
+			</view>
+		</van-tab>
+
+		<van-tab title="错题本" name="c">
+			<view wx:if="{{block}}" style="text-align: center;margin: 20px 0px;color: rgb(187, 187, 187);">暂无错题记录</view>
+			<view class="wrongTopicThis">
+				<view class="questionItem" wx:for="{{questionData}}" wx:key="index">
+					<view class="question-title"><rich-text nodes="{{item.questionName}}"></rich-text></view>
+					<view class="question-select">
+						<view wx:for="{{item.questionRecord}}" wx:key="index" style="display: flex;">
+						{{item.OptionNumber}}
+						<rich-text style="margin-left:20rpx;" nodes="{{item.OptionContent}}"></rich-text>
+						</view>
+						<view><text style="color:rgb(0, 170, 0);">正确答案：</text>【{{item.answerArr}}】</view>
+						<view><text style="color:rgb(255, 0, 0);">练习答案：</text>【{{item.errorArr}}】</view>
+						<view class="question-analyze" wx:if="{{item.answerAnalysis != 'null'}}">分析：<rich-text nodes="{{item.answerAnalysis}}"></rich-text></view>
+					</view>
+				</view>
+			</view>
+		</van-tab>
+
+		<van-tab title="评价" name="d">
+			<view style="text-align: center;margin: 20px 0px;color: rgb(187, 187, 187);">正在开发中</view>
+		</van-tab>
+	</van-tabs>
+</view>

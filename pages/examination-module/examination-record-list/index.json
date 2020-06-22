@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-button": "/ui-lib/vant/button/index"
+
+  },
+  "navigationBarTitleText": "考试记录",
+  "onReachBottomDistance": 50
+}

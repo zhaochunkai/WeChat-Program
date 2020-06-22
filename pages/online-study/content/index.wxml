@@ -1,0 +1,40 @@
+<!-- 学习资料Page -->
+<view class="page">
+	<!-- 头部标题 -->
+	<view class="header">{{title}}【{{name}}】</view>
+	<!-- 头部信息 -->
+	<view class="header-decs">
+		<!-- 学习要求和已学习 -->
+		<view class="left">
+			<view>学习要求：{{Progress.totalDuration}}</view>
+			<view style="margin-top:10px;">已学习：{{Progress.duration}}</view>
+		</view>
+		<!-- 进度条 -->
+		<view class="right">
+			<van-circle value="{{Progress.studyProgress}}" size="60" layer-color="#eeeeee" text="{{Progress.studyProgress}}%" />
+		</view>
+		<view class="but">
+			<van-button type="primary" size="mini" bind:click="goWork">练题</van-button>
+		</view>
+	</view>
+	<!-- 标题 -->
+	<view class="title">当前知识点的资源列表</view>
+	<!-- card列表 -->
+	<view class="card" bindtap="go" wx:for='{{learningResource}}' data-items="{{item}}" data-filePath="{{item.filePath}}" wx:key='index'>
+		<view class="card-title">{{item.typeName}}</view>
+		<view class="card-dec">{{item.title}}</view>
+		<view class="card-bot">
+			<view class="card-decs">
+				<!-- 学习要求和已学习 -->
+				<view class="left">
+					<view>学习要求：{{item.totalDuration}}</view>
+					<view style="margin-top:5px;">已学习：{{!item.duration ? '0分钟' : item.duration}}</view>
+				</view>
+				<!-- 进度条 -->
+				<view class="right">
+					<van-circle value="{{item.studyProgress}}" size="45" layer-color="#eeeeee" text="{{item.studyProgress}}%" />
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

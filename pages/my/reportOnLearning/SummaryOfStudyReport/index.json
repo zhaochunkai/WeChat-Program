@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-icon": "/ui-lib/vant/icon/index"
+  }
+}

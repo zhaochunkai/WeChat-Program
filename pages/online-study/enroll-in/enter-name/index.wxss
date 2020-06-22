@@ -1,0 +1,18 @@
+.page{
+  padding: 0 20px;
+}
+.update{
+  max-width: 90px;
+  min-width: 90px;
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+  float: left;
+  height: 90px;
+  line-height: 90px;
+}
+.footer{
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}

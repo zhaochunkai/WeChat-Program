@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-dialog": "/ui-lib/vant/dialog/index"
+  },
+  "navigationBarTitleText": "在线直播"
+}

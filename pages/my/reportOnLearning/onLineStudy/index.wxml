@@ -1,0 +1,34 @@
+<view class="studentBasicInfo">
+	<view class="item" wx:for="{{treeDetail}}" wx:key="index">
+		<view class="title">{{item.courseName}}</view>
+    <view class="tree-list">
+    <!-- 章 -->
+      <view class="chapter-list-item" wx:for="{{item.learningRecord}}" wx:key="idnex">
+        <view class="chapter-list-title" style="color: #2272e4;line-height: 60rpx;">
+        {{item.title}}
+        <van-cell-group>
+          <van-field wx:if="{{item.cumulativeTime != ''}}" value="{{item.cumulativeTime}}" label="累计学习时长：" readonly />
+          <van-field wx:if="{{item.studyStartTime != ''}}" value="{{item.studyStartTime}}" label="学习开始时间：" readonly />
+          <van-field wx:if="{{item.studyEndTime != ''}}" value="{{item.studyEndTime}}" label="学习结束时间：" readonly />
+		    </van-cell-group>
+        <view class="chapter-list-title" style="color: #2272e4;line-height: 60rpx;" wx:for="{{item.children}}" wx:key="index">
+        {{item.title}}
+        <van-cell-group>
+          <van-field wx:if="{{item.cumulativeTime != ''}}" value="{{item.cumulativeTime}}" label="累计学习时长：" readonly />
+          <van-field wx:if="{{item.studyStartTime != ''}}" value="{{item.studyStartTime}}" label="学习开始时间：" readonly />
+          <van-field wx:if="{{item.studyEndTime != ''}}" value="{{item.studyEndTime}}" label="学习结束时间：" readonly />
+		    </van-cell-group>
+        <view class="chapter-list-title" style="color: #2272e4;line-height: 60rpx;" wx:for="{{item.children}}" wx:key="index">
+        {{item.title}}
+        <van-cell-group>
+          <van-field wx:if="{{item.cumulativeTime != ''}}" value="{{item.cumulativeTime}}" label="累计学习时长：" readonly />
+          <van-field wx:if="{{item.studyStartTime != ''}}" value="{{item.studyStartTime}}" label="学习开始时间：" readonly />
+          <van-field wx:if="{{item.studyEndTime != ''}}" value="{{item.studyEndTime}}" label="学习结束时间：" readonly />
+		    </van-cell-group>
+        </view>
+        </view>
+        </view>
+      </view>
+    </view>
+	</view>
+</view>

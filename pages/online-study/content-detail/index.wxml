@@ -1,0 +1,36 @@
+<view class='content-detail' wx:if='{{LearningPage}}'>
+	<!-- 名称 -->
+	<view class="title">当前资源：【{{detail.title}}】</view>
+	<view class="span" wx:if="{{!ViewTimeFlag}}">已完成本节知识点的学习，不再统计本次的学习进度</view>
+	<!-- 头部区域 -->
+	<view class="content">
+		<view class="left">
+			<view class="left-top">学习要求：{{detail.totalDuration}}</view>
+			<view class="left-bot">已经学习：{{!detail.duration ? '0分钟' : detail.duration}}
+				<view class="bot-item" wx:if="{{ViewTimeFlag}}">本次已学习{{displayTime}}</view>
+			</view>
+		</view>
+		<view class="right">
+			<van-circle value="{{detail.studyProgress}}" size="50" layer-color="#eeeeee" text="{{detail.studyProgress}}%" />
+		</view>
+	</view>
+	<!-- 视频区域 -->
+	<!-- custom-cache="{{true}}" -->
+	<video id="myVideo" class="video" initial-time="{{videoTime}}" wx:if='{{videoBtn}}' src="{{url}}" autoplay binderror="videoErrorCallback" controls></video>
+	<!-- 图片区域 -->
+	<image wx:if='{{imgBtn}}' src="{{url}}"></image>
+	<!-- 音频区域 -->
+	<audio id="myAudio" wx:if="{{audioBtn}}" name="{{detail.typeName}}" author="{{detail.title}}" src="{{url}}" controls loop></audio>
+	<!-- pdf按钮区域 -->
+	<van-button custom-style="margin-top:20px" type="primary" size="large" bindtap="openPdf" wx:if="{{PdfBtn}}">打开文档</van-button>
+</view>
+
+<camera mode="normal" device-position="front" flash="auto" binderror="error" wx:if='{{FaceAuthenticationPage}}'>
+	<cover-view class="controls">
+		<cover-image class="img" src="../../../images/notice.png" />
+	</cover-view>
+	<cover-view class="noticeTXT">请将头部放入框内，3秒后自动进行识别</cover-view>
+	<cover-view class="count">{{count}}</cover-view>
+</camera>
+
+<van-dialog id="van-dialog" />

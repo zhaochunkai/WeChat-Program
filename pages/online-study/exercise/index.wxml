@@ -1,0 +1,42 @@
+<view class="top">
+	<view class="name">课程【{{courseInfo.name}}】</view>
+	<view class="title">当前知识点：{{knowledgePoint.name}}</view>
+</view>
+<view class="main">
+	<view class="main-top" style="margin:15px 0;">
+		<text style="text-align: left;">{{testQuestions.questionTypeName}}</text>
+		<text style="float:right">难易程度：{{testQuestions.difficultyLevelName}}</text>
+	</view>
+	<view class="cell">
+		<view class="title">
+			<rich-text nodes="{{testQuestions.paperTitle}}"></rich-text>
+		</view>
+		<view class="select-main">
+			<!-- 单选题 -->
+			<van-radio-group value="{{ radio }}" wx:if="{{testQuestions.questionTypeName == '单选题' || testQuestions.questionTypeName == '判断题'}}">
+				<view bindtap="{{radioChange}}" wx:for="{{testQuestions.questionSubjectOptions}}" wx:key="index" data-selectDetail="{{item}}">
+					<van-radio name="{{item.id}}">{{item.optionNumber}}. 
+						<rich-text nodes="{{item.optionContent}}"></rich-text>
+					</van-radio>
+				</view>
+			</van-radio-group>
+			<!-- 多选题 -->
+			<van-checkbox-group value="{{ check }}" wx:if="{{testQuestions.questionTypeName == '多选题'}}">
+			<view bindtap="CheckChange" wx:for="{{testQuestions.questionSubjectOptions}}" wx:key="index" data-selectDetail="{{item}}">
+				<van-checkbox name="{{item.id}}">
+					{{item.optionNumber}}. <rich-text nodes="{{item.optionContent}}"></rich-text>
+				</van-checkbox>
+			</view>
+			</van-checkbox-group>
+		</view>
+	</view>
+</view>
+<!-- 答案解析 -->
+<view class="theAnswerToParse" wx:if="{{flagSubmit}}">
+	<view class="answer">答案：【{{answer}}】 <text wx:if="{{flagAnswer}}" style="color:rgb(0, 170, 0);">回答正确</text><text wx:if="{{flagAnswer == false}}" style="color:rgb(255, 0, 0);">回答错误</text></view>
+	<view class="analysis" wx:if="{{testQuestions.answerAnalysis != ''}}">分析：<rich-text nodes="{{testQuestions.answerAnalysis}}"></rich-text></view>
+</view>
+<view class="foot">
+	<van-button custom-style="margin-left: 20%;" type="primary" color="#1989fa" size="small" bindtap="submit">提交</van-button>
+	<van-button custom-style="margin-left: 20%;" type="primary" color="rgb(245, 154, 36)" size="small" bindtap="nextTopic">下一题</van-button>
+</view>

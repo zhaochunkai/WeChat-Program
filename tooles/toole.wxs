@@ -1,0 +1,42 @@
+
+var replaceT = function(time){
+  if (time.indexOf('.') !== -1){
+    time = time.substring(0, time.indexOf('.'))
+  }
+  return time.replace('T', ' ')
+}
+var decodeURIComponentStr = function(str){
+  return decodeURIComponent(str)
+}
+var generateNum = function (num) {
+  console.log(num)
+  var chNum = ''
+  switch (num) {
+    case 1:
+      chNum = '一'
+      break
+    case 2:
+      chNum = '二'
+      break
+    case 3:
+      chNum = '三'
+      break
+    case 4:
+      chNum = '四'
+      break
+    case 5:
+      chNum = '五'
+      break
+    case 6:
+      chNum = '六'
+      break
+    default:
+      chNum = '无'
+  }
+  return chNum
+}
+module.exports = {
+  replaceT: replaceT,
+  decodeURIComponentStr: decodeURIComponentStr,
+  generateNum: generateNum,
+};

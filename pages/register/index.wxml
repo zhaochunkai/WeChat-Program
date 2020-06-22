@@ -1,0 +1,13 @@
+<van-cell-group>
+	<van-field value="{{ tel }}" bind:input="phone" label="联系电话" placeholder="请输入联系电话" maxlength="11" bind:blur='telRuls' error-message='{{ telRuls }}' />
+  <view class="Select">请选择身份</view>
+	<van-dropdown-menu>
+		<van-dropdown-item value="{{ value }}" options="{{ option }}" />
+	</van-dropdown-menu>
+
+	<van-field value="{{ sms }}" center clearable label="短信验证码" maxlength="6" bind:input="sms" placeholder="请输入短信验证码" use-button-slot>
+		<van-button slot="button" size="small" bindtap="sendMsg" type="primary">{{smsflag ? count : ''}}{{btnMsg}}</van-button>
+	</van-field>
+</van-cell-group>
+
+<van-button type="primary" size="large" bindtap="binding" custom-style="margin-top:20px;">绑定</van-button>

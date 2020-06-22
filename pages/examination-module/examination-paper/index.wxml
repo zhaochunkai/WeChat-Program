@@ -1,0 +1,71 @@
+<wxs src="../../../tooles/toole.wxs" module="tools" />
+<van-notify id="van-notify" />
+<view class="page">
+  <view class="top">
+    <view class="m-text-center m-font-weight">{{examinationInfo.courseName}}</view>
+    <view class="m-text-center">《{{examinationInfo.examinationPaperName}}》（{{examinationInfo.examinationDuration}}分钟）</view>
+    <view class="m-flex-between">
+      <view class="m-text-center m-font-weight">倒计时：<van-count-down time="{{ time }}" format="HH 时 mm 分 ss 秒" /></view>
+      <van-button type="primary" color="#f60" size="small" bindtap="showAnswerCard">答题卡</van-button>
+    </view>
+  </view>
+  <!-- 试题内容 -->
+  <view class="main">
+    <view class="main-top m-text-center" >
+      <text>{{questionContent.questionTypeName}}</text>
+    </view>
+    <view class="cell">
+      <view class="title">
+        <rich-text nodes="{{tools.decodeURIComponentStr(questionContent.paperTitle)}}"></rich-text>
+      </view>
+      <view class="select-main">
+        <!-- 单选题 -->
+        <van-radio-group value="{{ questionContent.radio }}" wx:if="{{questionContent.questionTypeName == '单选题' || questionContent.questionTypeName == '判断题'}}">
+          <view bindtap="radioChange" wx:for="{{questionContent.examPaperQuestionOptionsRequests}}" wx:key="index" data-selectDetail="{{item}}">
+            <van-radio name="{{item.questionSubjectOptionId}}">{{item.optionNumber}}. <rich-text nodes="{{tools.decodeURIComponentStr(item.optionContent)}}"></rich-text>
+            </van-radio>
+          </view>
+        </van-radio-group>
+        <!-- 多选题 -->
+        <van-checkbox-group value="{{ checkedList }}" wx:if="{{questionContent.questionTypeName == '多选题'}}">
+          <view bindtap="checkChange" wx:for="{{questionContent.examPaperQuestionOptionsRequests}}" wx:key="index" data-selectDetail="{{item}}">
+            <van-checkbox shape="square" name="{{item.questionSubjectOptionId}}">{{item.optionNumber}}. <rich-text nodes="{{tools.decodeURIComponentStr(item.optionContent)}}"></rich-text>
+            </van-checkbox>
+          </view>
+        </van-checkbox-group>
+      </view>
+    </view>
+  </view>
+  <!-- 答案解析 -->
+  <view class="foot">
+    <view class="m-flex-between">
+      <van-button wx:if="{{questionIndex === 0}}" disabled type="primary" color="rgb(245, 154, 36)" size="small" >上一题</van-button>
+      <van-button wx:else type="primary" color="rgb(245, 154, 36)" size="small" bindtap="nextQuestion" data-index="-1">上一题</van-button>
+      <van-button type="primary" color="#1989fa" size="small" bindtap="_submitExaminationPaper">提交试卷</van-button>
+      <van-button wx:if="{{questionIndex === questionLists.length - 1}}" disabled type="primary" color="rgb(245, 154, 36)" size="small" data-index="1">下一题</van-button>
+      <van-button wx:else type="primary" color="rgb(245, 154, 36)" size="small" bindtap="nextQuestion" data-index="1">下一题</van-button>
+    </view>
+  </view>
+  <!-- 答题卡 -->
+  <van-popup show="{{ answerVisible }}" bind:close="onClose" position="bottom">
+    <view class="m-flex-around m-padding-top m-padding-bottom">
+      <view>答题卡</view>
+      <view class="m-flex"><view class="m-answer-mini m-answered"></view>已回答</view>
+      <view class="m-flex"><view class="m-answer-mini"></view>未回答</view>
+    </view>
+    <view wx:for="{{questionTypeList}}" wx:key="index" wx:for-item="queType">
+      <view wx:if="{{queType.children && queType.children.length>0}}">
+        <view class="m-font-weight m-text-center m-padding-top m-padding-bottom">{{queType.label}}</view>
+        <!-- <view class="m-flex"> -->
+        <view class="m-queAnswerContent">
+          <view wx:for="{{queType.children}}" wx:key="{{index}}" wx:for-index="num" wx:for-item="item" catchtap="changeQuestion" data-index="{{index}}" data-num="{{num}}">
+            <view class="m-answer m-answered" wx:if="{{item.radio || (item.checkedList && item.checkedList.length>0)}}">{{num+1}}</view>
+            <view wx:else class="m-answer">{{num+1}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="m-margin-bottom"></view>
+  </van-popup>
+</view>
+<van-dialog id="van-dialog" />

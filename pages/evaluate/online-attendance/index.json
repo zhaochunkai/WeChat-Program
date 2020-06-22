@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-field": "/ui-lib/vant/field/index",
+    "van-button": "/ui-lib/vant/button/index",
+    "van-count-down": "/ui-lib/vant/count-down/index"
+  },
+  "navigationBarTitleText": "在线考勤"
+}

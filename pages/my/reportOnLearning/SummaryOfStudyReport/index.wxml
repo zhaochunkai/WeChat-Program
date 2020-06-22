@@ -1,0 +1,22 @@
+<view class="SummaryOfStudyReport">
+  <view class="title">{{projectDetail.name}}</view>
+  <view class="header">
+    <view style="font-size: 16px;font-weight: 800;margin: 20rpx 0;">概述</view>
+    <view class="main">{{summarize}}</view>
+    <view class="name">{{TenantName}}</view>
+  </view>
+  <view class="body">
+    <view class="item" bindtap="goToBasicInformation">
+      <view style="width:95%">基本信息</view>
+      <view class="iconRt"><van-icon name="arrow" /></view>
+    </view>
+    <view class="item" bindtap="goToOnLineStudy">
+      <view style="width:95%">在线学习</view>
+      <view class="iconRt"><van-icon name="arrow" /></view>
+    </view>
+    <view class="item" bindtap="goToLiveToLearn">
+      <view style="width:95%">直播学习</view>
+      <view class="iconRt"><van-icon name="arrow" /></view>
+    </view>
+  </view>
+</view>

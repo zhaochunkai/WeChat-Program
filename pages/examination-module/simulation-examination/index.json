@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-button": "/ui-lib/vant/button/index",
+    "van-dialog": "/ui-lib/vant/dialog/index",
+    "van-loading": "/ui-lib/vant/loading/index",
+    "van-collapse": "/ui-lib/vant/collapse/index",
+    "van-collapse-item": "/ui-lib/vant/collapse-item/index",
+    "van-cell": "/ui-lib/vant/cell/index",
+    "van-cell-group": "/ui-lib/vant/cell-group/index"
+  },
+  "navigationBarTitleText": "模拟考试",
+  "onReachBottomDistance": 50
+}

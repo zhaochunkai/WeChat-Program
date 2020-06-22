@@ -1,0 +1,95 @@
+.tabel-item{
+  width: 100%;
+  padding: 0 20px;
+  /* height: 40px; */
+  font-size: 14px;
+  line-height: 40px;
+  text-align: left;
+  float: left;
+  box-sizing: border-box;
+}
+.tabel-item .title{
+  width: 30%;
+  border-bottom: 1px solid #EEEEEE;
+  height: auto;
+  float: left;
+}
+.tabel-item .content{
+  width: 68%;
+  border-bottom: 1px solid #EEEEEE;
+  height: auto;
+  float: left;
+}
+.van-cell{
+  width: 50% !important;
+  height: 30px !important;
+  border: 1rpx solid #ccc;
+  padding: 0 10px !important;
+  margin: 0 10px !important;
+  float: left;
+}
+.select{
+  position: relative;
+  height: 30px;
+}
+.options{
+  width: 50%;
+  height: auto;
+  max-height: 150px;
+  border: 1rpx solid #ccc;
+  position: absolute;
+  left: 10px;
+  top: 30px;
+  z-index: 999;
+  background-color: #fff;
+  overflow-y:auto;
+}
+.options .option-item{
+  padding: 0 5px;
+  line-height: 30px;
+  border-bottom: 1rpx solid #eee;
+  color: #666;
+  font-size: 12px;
+}
+.top{
+  padding: 0 20px;
+  height: 30px ;
+  line-height: 30px;
+}
+.top .state{
+  float: left;
+  width: 30%;
+}
+.top .state .state-item{
+  background-color: #07c160;
+  font-size: 12px;
+  margin-left: 5px;
+  padding: 3px;
+  color: #fff;
+  border-radius: 3px;
+}
+.top .registered{
+  float: left;
+  margin-right: 20px;
+}
+.top .registered .registered-item{
+  background-color: #1989fa;
+  font-size: 12px;
+  margin-left: 5px;
+  padding: 3px 8px;
+  color: #fff;
+  border-radius: 3px;
+}
+.tabel-item .projectDescription{
+  width: 30%;
+  height: auto;
+  float: left;
+}
+.tabel-item .projectDescription-text{
+  width: 68%;
+  font-size: 14px;
+  line-height: 16px;
+  overflow: hidden;
+  float: left;
+  margin-top: 10px;
+}

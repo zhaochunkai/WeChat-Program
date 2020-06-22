@@ -1,0 +1,39 @@
+.success {}
+
+.success .s_content {
+  margin-top: 60pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success .c_img {
+  width: 44pt;
+  height: 44pt;
+}
+
+.s_content .c_title {
+  margin-top: 12pt;
+  color:rgb(51,51,51);
+  font-size: 18pt;
+  font-family: SimHei;
+}
+.success .f_content {
+  margin-top: 60pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success .f_img {
+  width: 44pt;
+  height: 44pt;
+}
+
+.f_content .f_title {
+  margin-top: 12pt;
+  color:rgb(51,51,51);
+  font-size: 18pt;
+  font-family: SimHei;
+  padding: 10pt;
+}

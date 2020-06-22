@@ -1,0 +1,12 @@
+<wxs src="../../../tooles/toole.wxs" module="tools" />
+<view class="page">
+  <view class="course-item m-border-bottom" wx:for="{{examRecordList}}" wx:key="index" wx:for-item="record">
+    <view class="course-name m-margin-bottom m-text-center">{{record.courseName}}</view>
+    <view class="m-margin-bottom m-text-center m-font-weight">考试名称：{{record.examinationArrangeName}}</view>
+    <view class="m-margin-bottom m-text-center m-font-weight">试卷{{record.constructionExaminationPaperName}}（得分{{record.score}}）     </view>    
+    <view class="course-btm m-margin-bottom">
+      <view class="m-margin-top">交卷时间：{{tools.replaceT(record.submitExamPaperTime)}}</view>
+      <van-button type="info" size="small" bindtap="toExamResult" data-record="{{record}}">查看试卷</van-button>
+    </view>
+  </view>
+</view>

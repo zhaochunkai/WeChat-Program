@@ -1,0 +1,58 @@
+.bindingInformation {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  width: 100%;
+  border-top: 1px solid #eee;
+  margin: 0 12pt;
+  line-height: 50px;
+}
+
+.portraitCapture {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 56pt;
+  border-bottom: 1px solid #eee;
+}
+
+.portraitCapture .p_img {
+  width: 17pt;
+  height: 17pt;
+  margin-left: 30pt;
+}
+
+.portraitCapture .p_center {
+  margin-left: 5pt;
+}
+
+.portraitCapture .p_right {
+  position: absolute;
+  right: 30pt;
+}
+
+.Verified {
+  height: 56pt;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.Verified .v_img {
+  width: 17pt;
+  height: 17pt;
+  margin-left: 30pt;
+}
+
+.Verified .v_center {
+  margin-left: 5pt;
+}
+
+.Verified .v_right {
+  position: absolute;
+  right: 30pt;
+}

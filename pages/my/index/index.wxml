@@ -1,0 +1,58 @@
+<view class='my'>
+	<view class="header">
+	<view class="image"><open-data type="userAvatarUrl"></open-data></view>
+		<open-data class="name" type="userNickName" lang="zh_CN"></open-data>
+	</view>
+	<view class="content">
+		<!-- <view class="item">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/apply.png" />
+			<view class="title">我的报名</view>
+			<van-icon name="arrow" />
+		</view> -->
+		<view class="item" catchtap="bindingInformation" wx:if="{{flag}}">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/apply.png" />
+			<view class="title">信息绑定</view>
+			<van-icon name="arrow" />
+		</view>
+		<!-- <view class="item">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/course.png" />
+			<view class="title">我的课程</view>
+			<van-icon name="arrow" />
+		</view> -->
+		<!-- <view class="item">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/class.png" />
+			<view class="title">我的课表</view>
+			<van-icon name="arrow" />
+		</view> -->
+		<!-- <view class="item">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/grade.png" />
+			<view class="title">我的成绩</view>
+			<van-icon name="arrow" />
+		</view> -->
+		<!-- <view class="item">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/circle.png" />
+			<view class="title">我的圈子</view>
+			<van-icon name="arrow" />
+		</view> -->
+		<view class="item" bindtap="goReportOnLearning">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/report.png" />
+			<view class="title">我的学习报告</view>
+			<van-icon name="arrow" />
+		</view>
+		<!-- <view class="item">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/work.png" />
+			<view class="title">我的求职</view>
+			<van-icon name="arrow" />
+		</view> -->
+		<view class="item" bindtap="goMyInfo">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/my.png" />
+			<view class="title">个人信息</view>
+			<van-icon name="arrow" />
+		</view>
+		<view class="item" catchtap="clearCache">
+			<van-icon custom-style="font-size:20px;padding:0 5px;" name="/images/my.png" />
+			<view class="title">清除缓存</view>
+			<van-icon name="arrow" />
+		</view>
+	</view>
+</view>

@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-tab": "/ui-lib/vant/tab/index",
+    "van-tabs": "/ui-lib/vant/tabs/index",
+    "van-field": "/ui-lib/vant/field/index",
+    "van-button": "/ui-lib/vant/button/index",
+    "van-dialog": "/ui-lib/vant/dialog/index",
+    "van-loading": "/ui-lib/vant/loading/index",
+    "van-tag": "/ui-lib/vant/tag/index",
+    "van-icon": "/ui-lib/vant/icon/index"
+  }
+}

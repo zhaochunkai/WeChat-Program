@@ -1,0 +1,72 @@
+
+<wxs src="../../../../tooles/toole.wxs" module="tools" />
+<view class="page">
+  <view class="examPaperHeader m-text-center">
+    <view class="course-name m-margin-bottom">课程：{{examPaperInfo.ExamPaperHeader.CourseName}}</view>
+    <view class="m-margin-bottom m-font-weight">《{{examPaperInfo.ExamPaperHeader.ExaminationPaperName}}》</view>
+    <view class="m-flex-between m-margin-bottom m-font-weight">
+      <text>总分：{{examPaperInfo.ExamPaperHeader.Score}}分</text>
+      <text style="color:#f0f;">得分：{{examPaperInfo.Score}} 分</text>
+    </view>
+    <view class="m-flex-between m-margin-bottom">
+      <text>就读班级：{{examPaperInfo.ExamPaperHeader.ClassName}}</text>
+      <text>考场：{{examPaperInfo.ExamPaperHeader.SiteName}} ({{examPaperInfo.ExamPaperHeader.ExaminationRoomNo}}号)</text>
+    </view> 
+  </view>
+  <!-- 试题 -->
+  <view class="examPaperContent">
+    <view class="question-type-list" wx:for="{{examPaperQuestions}}" wx:key="index" wx:for-item="item">
+      <!-- 题型 -->
+      <view class="question-type-name">
+        <text style="text-align:left;">{{tools.generateNum(index+1)}}、{{item.label}}</text>
+        <text>（ 共 {{item.children.length}} 题{{item.children && item.children.length>0?'，每题 '+item.children[0].Score+' 分': ''}}）</text>
+      </view>      
+      <!-- 试题 -->
+      <view class="question-list m-border-bottom" wx:for="{{item.children}}" wx:key="index" wx:for-item="question">
+        <view class="cell">
+          <view class="question-title" >
+            <text style="text-align:left;">{{index+1}}、</text>
+            <rich-text nodes="{{tools.decodeURIComponentStr(question.PaperTitle)}}"></rich-text>
+          </view>
+          <view class="select-main">
+            <!-- 单选题 -->
+            <van-radio-group value="{{ question.checkValue }}" wx:if="{{question.QuestionTypeName == '单选题' || question.QuestionTypeName == '判断题'}}">
+              <view bindtap="radioChange" wx:for="{{question.ExamPaperQuestionOptionsRequests}}" wx:key="index" data-selectDetail="{{question}}">
+                <van-radio name="{{item.QuestionSubjectOptionId}}">
+                  <text class="optionNumber">{{item.OptionNumber}}. </text>
+                  <view class="optionContent">
+                    <rich-text nodes="{{tools.decodeURIComponentStr(item.OptionContent)}}"></rich-text>
+                  </view>                  
+                </van-radio>
+              </view>
+            </van-radio-group>
+            <!-- 多选题 -->
+            <van-checkbox-group value="{{ question.checkedList }}" wx:if="{{question.QuestionTypeName == '多选题'}}">
+              <view class="question-checkbox" bindtap="checkChange" wx:for="{{question.ExamPaperQuestionOptionsRequests}}" wx:key="index" data-selectDetail="{{question}}">
+                <van-checkbox shape="square" icon-size="18px" name="{{item.QuestionSubjectOptionId}}">
+                  <text class="optionNumber">{{item.OptionNumber}}. </text>
+                  <view class="optionContent">
+                    <rich-text nodes="{{tools.decodeURIComponentStr(item.OptionContent)}}"></rich-text>
+                  </view>  
+                </van-checkbox>
+              </view>
+            </van-checkbox-group>
+          </view>
+        </view>
+        <!-- 答案解析 -->
+        <view class="foot">
+          <view class="m-margin-bottom">
+            <text>参考答案：【{{question.correctAns}}】</text>
+            <text style="{{question.judgeAnswer=='回答正确'?'color:#0a0': 'color:#f00'}}">{{question.judgeAnswer}}</text>
+          </view>
+          <view style="display:flex;" wx:if="{{question.AnswerAnalysis != ''}}">
+            <text class="optionNumber">试题分析：</text>
+            <view class="optionContent">
+              <rich-text nodes="{{tools.decodeURIComponentStr(question.AnswerAnalysis)}}"></rich-text>
+            </view>
+          </view>
+        </view>      
+      </view>
+    </view>
+  </view>
+</view>

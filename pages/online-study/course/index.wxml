@@ -1,0 +1,31 @@
+<view class='page'>
+	<!-- 头部 -->
+	<view class="header">基本信息</view>
+	<!-- 信息区域 -->
+	<van-panel title="当前学期" status="{{trainingProgram.semesterName}}"></van-panel>
+	<van-panel title="学习项目" status="{{trainingProgram.trainingProgramsName}}"></van-panel>
+	<van-panel title="开始时间" status="{{trainingProgram.attendClassStartDate}}"></van-panel>
+	<van-panel title="结束时间" status="{{trainingProgram.attendClassStopDate}}"></van-panel>
+	<view class="header">课程信息</view>
+
+	<block wx:for="{{courseInfos}}" wx:key="courseInfo" wx-item="item">
+		<!-- card卡片 -->
+		<view class="card" bindtap="redirectDetailClick" data-courseid="{{item.courseId}}">
+			<!-- 左边图片 -->
+			<view class="img">
+				<image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2212934581,1852871468&fm=26&gp=0.jpg"></image>
+			</view>
+			<!-- 右边内容区 -->
+			<view class="content">
+				<!-- 内容区标题 -->
+				<view class="title">{{item.courseName}}</view>
+				<view class="decs">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</view>
+				<!-- 进度条区域 -->
+				<view class="dec">
+					<van-progress percentage="{{item.studyProgress}}" color="#f2826a" />
+				</view>
+			</view>
+		</view>
+	</block>
+</view>
+<van-dialog id="van-dialog" />

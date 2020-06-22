@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-tab": "/ui-lib/vant/tab/index",
+    "van-tabs": "/ui-lib/vant/tabs/index",
+    "van-dropdown-menu": "/ui-lib/vant/dropdown-menu/index",
+    "van-dropdown-item": "/ui-lib/vant/dropdown-item/index",
+    "van-button": "/ui-lib/vant/button/index",
+    "van-dialog": "/ui-lib/vant/dialog/index",
+    "van-field": "/ui-lib/vant/field/index",
+    "van-tag": "/ui-lib/vant/tag/index"
+  },
+  "navigationBarTitleText": "学习项目"
+}

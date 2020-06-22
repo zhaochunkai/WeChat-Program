@@ -1,0 +1,68 @@
+<!-- top -->
+<view>
+	<!-- content -->
+	<view>
+		<!-- 培训项目下拉框 -->
+		<view class="select">
+			<van-field value="{{value}}" placeholder="请选择学习项目" right-icon="arrow-down" disabled border="{{ true }}" custom-style="line-height: 30px;" catchtap="input" />
+			<van-button type="info" size="small" bind:click="enterNameClick" style="display:{{but ? 'none' : 'block'}}">开始报名</van-button>
+			<van-button type="info" size="small" bind:click="goPaymentClick" wx:if="{{payStatus == '未缴费' && passStatus == '通过'}}">缴费</van-button>
+			<view class="options" style="{{ disflag ? 'display:none;' : 'display:block;'}}">
+				<view class="option-item" wx:for="{{trainingPrograms}}" wx:key="index" catchtap="item" data-id="{{item.id}}" data-item='{{item.name}}'>{{item.name}}</view>
+			</view>
+		</view>
+		<!-- 学习项目信息 -->
+		<van-tabs active="a">
+			<van-tab title="学习项目信息" name="a">
+				<view class="tabel" style="margin-top:10px;">
+					<view class="top" style="display:{{top ? 'none' : 'block'}}"> 
+						<view class="state">状态<text class="state-item">{{passStatus}}</text></view>
+						<view class="registered">已报名<text class="registered-item">{{number}}</text>人</view>
+						<van-tag wx:if="{{ passStatus == '通过' }}" type="primary">{{payStatus}}</van-tag>
+					</view>
+					<view class="tabel-item">
+						<view class="title">项目名称</view>
+						<view class="content">{{trainingProgramsInfo.name}}</view>
+					</view>
+					<view class="tabel-item">
+						<view class="title">项目类型</view>
+						<view class="content">{{trainingProgramsInfo.typeName}}</view>
+					</view>
+					<view class="tabel-item">
+						<view class="title">招生人数</view>
+						<view class="content">{{trainingProgramsInfo.recruitStudentsNumbers}}</view>
+					</view>
+					<view class="tabel-item">
+						<view class="title">报名时间</view>
+						<view class="content">{{(trainingProgramsInfo.recruitStudentsStartDate)}}</view>
+					</view>
+					<view class="tabel-item">
+						<view class="title">截止时间</view>
+						<view class="content">{{(trainingProgramsInfo.recruitStudentsStopDate)}}</view>
+					</view>
+					<view class="tabel-item">
+						<view class="title">项目费用</view>
+						<view class="content">{{trainingProgramsInfo.charge}}</view>
+					</view>
+					<view class="tabel-item">
+						<view class="projectDescription">项目说明</view>
+						<rich-text class="projectDescription-text" nodes="{{trainingProgramsInfo.description}}"></rich-text>
+					</view>
+				</view>
+			</van-tab>
+			<van-tab title="教学课程" name="b">
+				<view class="tabel-item active" style="margin-top:10px;">
+					<view class="title">课程名称</view>
+					<view class="content">主讲教师</view>
+				</view>
+				<block wx:for="{{trainingProgramsInfo.bindCourseInfos}}" wx:key="key" wx-item="item">
+					<view class="tabel-item">
+						<view class="title">{{item.courseName}}</view>
+						<view class="content">{{item.teacherName?item.teacherName:"暂未安排"}}</view>
+					</view>
+				</block>
+			</van-tab>
+		</van-tabs>
+	</view>
+</view>
+<van-dialog id="van-dialog" />

@@ -1,0 +1,18 @@
+{
+  "name": "onlinetraining.miniprogram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.gd/zhangyue/onlinetraining.miniprogram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cos-js-sdk-v5": "^0.5.24"
+  }
+}

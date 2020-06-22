@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-panel": "/ui-lib/vant/panel/index",
+    "van-progress": "/ui-lib/vant/progress/index",
+    "van-dialog": "/ui-lib/vant/dialog/index"
+  }
+}

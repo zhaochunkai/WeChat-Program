@@ -1,0 +1,26 @@
+/* pages/evaluate/online-evaluate/index.wxss */
+.evaluate{
+  padding: 0 10px;
+}
+.m-border-bottom{
+  border-bottom:1px dashed #ddd; 
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+.plan-list{
+  padding:5px 10px;
+  font-size: 14px;
+}
+.m-btn{
+  display: block;
+  width:100%;
+  height:2rem;
+  line-height:2rem;
+  background-color: #3cbaf3;
+  color:#fff;
+  border-radius:4px;
+  text-align: center;
+}
+.m-btn-dark{
+  background-color: #015071;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "/ui-lib/vant/icon/index"
+  },
+  "disableScroll": true,
+  "navigationBarTitleText": "个人中心"
+}

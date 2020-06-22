@@ -1,0 +1,112 @@
+
+.top{
+  color: #000;
+  font-weight: 600;
+  background: #d3dfe2;
+  padding: 10px 10px;
+  margin: 0 5px;
+}
+.top .name{
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin: 15px 0;
+}
+.top .title{
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding: 15px 0;
+  
+}
+.main{
+  margin: 5px;
+}
+.cell .title{
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.main-top{
+  font-size: 14px;
+  font-weight: 600;
+  background-color:lightblue;
+  margin:10px 0;
+  padding:10px;
+}
+.van-radio{
+  margin: 20rpx 0;
+}
+.analysis{
+  font-size: 12px;
+  color: #666;
+  height: 400rpx;
+  line-height: 16PX;
+  overflow-y: auto;
+}
+.theAnswerToParse{
+  padding: 0 20rpx;
+}
+.answer{
+  font-size: 14px;
+  color: #333;
+}
+.analysis{
+  height: 300rpx;
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 40rpx;
+  color: #666;
+}
+.van-radio__label--right{
+  display: inherit;
+  line-height: 50rpx !important;
+}
+.van-checkbox__label{
+  display: inherit;
+  line-height: 50rpx !important;
+}
+.foot{
+  width: 100%;
+  padding:10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top:1px solid #eee;
+}
+.m-flex-between{
+  margin:0 10px;
+}
+.m-flex-around{
+  line-height:32px;
+  font-weight: bold;
+  background: #fa0;
+}
+/* 答题卡 */
+.m-answer-mini{
+  width:16px;
+  height:16px;
+  text-align:center;
+  line-height:16px;
+  margin:5px;
+  border:1px solid #eee;
+  background: #fff;
+}
+.m-queAnswerContent{
+  overflow: hidden;
+}
+.m-answer{
+  float: left;
+  width:24px;
+  height:24px;
+  text-align:center;
+  line-height:24px;
+  margin:5px;
+  border:1px solid #eee;
+  background: #fff;
+}
+.m-answer::after{
+  content:'';
+  display: block;
+}
+.m-answered{
+  background: rgb(100, 202, 100);
+}

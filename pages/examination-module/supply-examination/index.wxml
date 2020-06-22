@@ -1,0 +1,27 @@
+<wxs src="../../../tooles/toole.wxs" module="tools" />
+<view class="page">
+  <van-collapse value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item wx:for="{{examArrangeList}}" wx:key="index" wx:for-item="item" title="{{item.examName}}" name="{{item.id}}">
+      <view class="course-item m-border-bottom" wx:for="{{item.examSupplementaryArrangeWithInfos}}" wx:key="index" wx:for-item="course">
+        <view class="course-name m-margin-bottom m-text-center">{{course.courseName}}</view>
+        <view class="m-margin-bottom m-text-center m-font-weight">{{course.constructionExaminationPaperName}}</view>
+        <!-- <view class="m-margin-bottom m-text-center">考场：{{course.className}}（{{course.siteName}}号座位）</view> -->
+        <view class="m-margin-bottom">
+          考试有效期：{{tools.replaceT(course.examinationBeginTime)}} ~ {{tools.replaceT(course.examinationEndTime)}}
+        </view>
+        <view class="course-btm m-margin-bottom">
+          <view class="m-margin-top">考试时长：{{course.durationTime}}分钟</view>  
+          <van-button wx:if="{{course.usageCount === 0}}" type="primary" size="small" bindtap="toExam" data-arrange="{{item}}" data-paper="{{course}}">开始考试</van-button>
+          <van-button wx:else type="info" size="small" bindtap="toExamResult" data-arrange="{{item}}" data-paper="{{course}}">查看考试结果</van-button>
+        </view>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <view class="m-margin-top m-text-center" wx:if="{{showTip}}">列表中还没有考试安排哦</view>
+  <view class="m-margin-bottom m-text-center m-margin-top">
+    <text style="color:#aaa;">
+      <van-loading size="20px"></van-loading>
+      {{reachBottomTxt}}
+    </text>
+  </view>
+</view>

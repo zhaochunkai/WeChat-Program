@@ -1,0 +1,22 @@
+<view class='page'>
+	<!-- 头部 -->
+	<view class="header">我的学习项目</view>
+	<view wx:if="{{block}}" style="text-align: center;margin: 20px 0px;color: rgb(187, 187, 187);">暂无可学习的项目</view>
+	<block wx:for="{{programInfos}}" wx:key="study" wx-item="item">
+		<!-- card卡片 -->
+		<view class="card" data-facetime="{{item.onlineFaceAttendanceCycle}}" data-trainingProgramId="{{item.trainingProgramsId}}" data-trainingprogram="{{item}}" bindtap="redirectDetailClick">
+			<!-- 左边图片 -->
+			<view class="img">
+				<image src="../../../images/project.png"></image>
+			</view>
+			<!-- 右边内容区 -->
+			<view class="content">
+				<!-- 内容区标题 -->
+				<view class="title">{{item.trainingProgramsName}}</view>
+				<!-- 介绍区域 -->
+				<view class="dec"><van-tag type="success">开始时间</van-tag>{{item.attendClassStartDate}}</view>
+				<view class="dec"><van-tag type="success">结束时间</van-tag>{{item.attendClassStopDate}}</view>
+			</view>
+		</view>
+	</block>
+</view>

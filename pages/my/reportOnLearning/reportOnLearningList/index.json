@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-tag": "/ui-lib/vant/tag/index",
+    "van-dialog": "/ui-lib/vant/dialog/index"
+  }
+}

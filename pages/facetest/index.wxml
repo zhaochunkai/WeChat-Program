@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="page-body">
+    <view class="btn-area">
+      <button type="primary" bindtap="startAuth">开始认证</button>
+    </view>
+  </view>
+</view>

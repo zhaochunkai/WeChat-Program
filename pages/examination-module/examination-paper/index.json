@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-button": "/ui-lib/vant/button/index",
+    "van-radio": "/ui-lib/vant/radio/index",
+    "van-radio-group": "/ui-lib/vant/radio-group/index",
+    "van-checkbox": "/ui-lib/vant/checkbox/index",
+    "van-checkbox-group": "/ui-lib/vant/checkbox-group/index",
+    "van-count-down": "/ui-lib/vant/count-down/index",
+    "van-dialog": "/ui-lib/vant/dialog/index",
+    "van-notify": "/ui-lib/vant/notify/index",
+    "van-popup": "/ui-lib/vant/popup/index"
+  },
+  "navigationBarTitleText": "开始考试"
+}

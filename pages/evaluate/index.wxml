@@ -1,0 +1,18 @@
+<!-- 整个页面 -->
+<view class="wrapper">
+	<!-- 顶部图片 -->
+	<view class="banner-top-wrapper">
+		<image src="{{topBannerPath}}" class="banner-top-img"></image>
+	</view>
+	<!-- 项目Node -->
+	<view class="content">
+		<view class="project" bindtap="redirectPage" data-value="attendance">
+			<image src="{{paythefeesPath}}" class="project-img"></image>
+			<view>在线考勤</view>
+		</view>
+		<view class="project" bindtap="redirectPage" data-value="evaluate">
+			<image src="{{onLineStudyPath}}" class="project-img"></image>
+			<view>在线评价</view>
+		</view>
+	</view>
+</view>

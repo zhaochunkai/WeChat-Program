@@ -1,0 +1,19 @@
+<view class='attendance'>
+	<view style="text-align:center;padding-top:20px;" wx:if="{{flag}}">还没有发起签到考勤</view>
+	<van-cell-group wx:if="{{!flag}}">
+		<van-field value="{{dataDetail.trainingProgramName}}" label="学习项目" custom-style='border-bottom: 1px solid #EEEEEE;' readonly border />
+		<van-field value="{{dataDetail.startTime}}" label="日 期" custom-style='border-bottom: 1px solid #EEEEEE;' readonly border />
+		<van-field value="{{dataDetail.className}}" label="班 级" custom-style='border-bottom: 1px solid #EEEEEE;' readonly border />
+		<van-field value="{{dataDetail.courseName}}" label="课 程" custom-style='border-bottom: 1px solid #EEEEEE;' readonly border />
+		<van-field value="{{dataDetail.pointInTimeName}}第{{dataDetail.knob}}节" label="课 节" custom-style='border-bottom: 1px solid #EEEEEE;' readonly border />
+		<van-field value="{{dataDetail.className}}" label="所在班级" custom-style='border-bottom: 1px solid #EEEEEE;' readonly border />
+		<van-field value="{{dataDetail.endTime}}" label="签到有效期" custom-style='border-bottom: 1px solid #EEEEEE;' readonly border />
+		<view class="sign">
+			<view style="margin-left: 16px;float:left;width:90px;">签到倒计时</view>
+			<van-count-down time="{{ dataDetail.date }}" />
+		</view>
+		<van-field value="" label="签到码" placeholder="请输入签到码" required use-button-slot bind:input='input'>
+			<van-button slot="button" size="small" type="primary" bindtap="signIn">完成签到</van-button>
+		</van-field>
+	</van-cell-group>
+</view>

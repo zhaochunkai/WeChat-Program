@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tab": "/ui-lib/vant/tab/index",
+    "van-tabs": "/ui-lib/vant/tabs/index",
+    "van-field": "/ui-lib/vant/field/index",
+    "van-button": "/ui-lib/vant/button/index"
+  },
+  "navigationBarTitleText": "在线评价",
+  "onReachBottomDistance": 500
+}

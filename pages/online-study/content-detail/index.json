@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-circle": "/ui-lib/vant/circle/index",
+    "van-button": "/ui-lib/vant/button/index",
+    "van-dialog": "/ui-lib/vant/dialog/index"
+  }
+}

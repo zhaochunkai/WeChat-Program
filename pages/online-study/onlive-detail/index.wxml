@@ -1,0 +1,99 @@
+<view class='page' style="display:{{livePage}}">
+	<!-- 直播头部 -->
+	<view class="top" style="height: {{topHeight}}">
+		<!-- 直播-->
+		<live-player orientation="{{orientation}}" src="{{liveRoom.flvPlayAddress}}" mode="live" autoplay bindstatechange="statechange" binderror="error" style="width: 100%; height: 100%;" />
+		<view class="bigIcon" catchtap="bigIcon" style="display: {{bigIcon}};">
+			<van-icon name="expand-o" color="#fff" size="25px" />
+		</view>
+		<view class="smallIcon" catchtap="smallIcon" style="display: {{smallIcon}};">
+			<van-icon name="shrink" color="#fff" size="25px"  />
+		</view>
+	</view>
+	<!-- tab标签区域 -->
+	<view class="tab" style="display:{{tabDisplay}}">
+		<van-tabs active="a">
+			<van-tab title="直播简介" name="a">
+				<view class="item">
+					<view class="label">直播标题：<text class="title">{{liveBrief.title}}</text></view>
+					<view class="label">直播简介：<text class="dec">{{liveBrief.description}}</text></view>
+					<view class="label">直播讲师：<text class="teacher">{{liveBrief.anchor}}</text></view>
+					<view class="label">开播时间：<text class="gotime">{{liveBrief.actuallyStartTime}}</text></view>
+					<view class="label">签到状态：<van-tag type="primary" wx:if="{{ SignInState == '正常'}}">{{SignInState}}</van-tag><van-tag type="danger" wx:if="{{ SignInState == '迟到'}}">{{SignInState}}</van-tag></view>
+					<view class="label">观看时长：<text class="time">{{liveTimes}}</text></view>
+				</view>
+				<!-- 已观看时长：{{liveBrief.title}} -->
+			</van-tab>
+			<van-tab title="直播观众" name="b">
+				<view class="live-audience">
+					<view class="live-top">
+						总共人数：<text class="total">{{liveRoomPerson.total}}</text>
+						在线人数：<text class="total">{{liveRoomPerson.onlineTotal}}</text>
+						离线人数：<text class="total" style="color:#666;">{{liveRoomPerson.offlineTotal}}</text>
+						<van-button type="primary" size="mini" custom-style="margin-left:20px;" catchtap="getLiveRoomPerson">刷新</van-button>
+					</view>
+				</view>
+				<view class="card">
+					<view class="userInfo" wx:for="{{liveRoomPerson.userInfos}}" wx:key="index">
+						<view class="img">
+							<image src="{{item.avatar ? item.avatar : '../../../images/default.png'}}"></image>
+						</view>
+						<view class="icon" style="background-color:{{item.isOnline ? '#33ff66' : '#ccc'}}"></view>
+						<view class="name">{{item.name}}</view>
+					</view>
+				</view>
+			</van-tab>
+			<van-tab title="互动交流" name="c">
+				<view class="chatting">
+					<!-- 消息显示区域 -->
+					<view class="msgBlock">
+					<view class="msghintMessage">{{msghintMessage}}</view>
+						<view class="msg" wx:for="{{msgarr}}" wx:key='index'>
+						<view class="msg-left">
+							<view class="headerImg">
+								<image src="{{item.HeadImageUrl}}"></image>
+							</view>
+						</view>
+						<view class="msg-rit">
+								<view class="name">{{item.NickName}}</view>
+								<view class="content">
+								<view class="detail">
+									{{item.Message}}
+								</view>
+								</view>
+						</view>
+						</view>
+					</view>
+					<!-- 发送消息区域 -->
+					<view class="bot">
+						<view class="input">
+							<input bind:input='sendBlur' placeholder="互相交流一下呀" value="{{value}}"></input>
+						</view>
+						<view class="send">
+							<van-button disabled="{{disabled}}" type="primary" size="small" bind:click="send">发送</van-button>
+						</view>
+					</view>
+				</view>
+			</van-tab>
+		</van-tabs>
+	</view>
+</view>
+
+<camera mode="normal" device-position="front" flash="auto" binderror="error"  style="display:{{FaceAuthenticationPage}}">
+	<cover-view class="controls">
+		<cover-image class="img" src="../../../images/notice.png" />
+	</cover-view>
+	<cover-view class="noticeTXT">请将头部放入框内，3秒后自动进行识别</cover-view>
+	<cover-view class="count">{{count}}</cover-view>
+</camera>
+
+<van-dialog id="van-dialog" />
+
+<!-- <view class="shade">
+	<view class="loading">
+		<van-loading color="#1989fa" size="50px" />
+	</view>
+	<view class="promptmessage">
+			老师正在赶来中，请稍等...
+		</view>
+</view> -->

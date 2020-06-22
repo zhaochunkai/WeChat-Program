@@ -1,0 +1,71 @@
+page{
+  position: relative;
+}
+.top{
+  color: #000;
+  font-weight: 600;
+  background: #d3dfe2;
+  padding: 10px 10px;
+  margin: 0 5px;
+}
+.top .name{
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin: 15px 0;
+}
+.top .title{
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding: 15px 0;
+  
+}
+.main{
+  margin: 5px;
+  padding: 10px;
+}
+.cell .title{
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.main-top{
+  font-size: 12px;
+  font-weight: 600;
+}
+.foot{
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
+.van-radio{
+  margin: 20rpx 0;
+}
+.analysis{
+  font-size: 12px;
+  color: #666;
+  height: 400rpx;
+  line-height: 16PX;
+  overflow-y: auto;
+}
+.theAnswerToParse{
+  padding: 0 20rpx;
+}
+.answer{
+  font-size: 14px;
+  color: #333;
+}
+.analysis{
+  height: 300rpx;
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 40rpx;
+  color: #666;
+}
+.van-radio__label--right{
+  display: inherit;
+  line-height: 50rpx !important;
+}
+.van-checkbox__label{
+  display: inherit;
+  line-height: 50rpx !important;
+}

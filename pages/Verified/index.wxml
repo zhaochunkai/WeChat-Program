@@ -1,0 +1,40 @@
+<view class="ID_verify">
+	<view class="header">
+		<view class="h_title">请上传本人的二代身份证</view>
+		<view class="h_msg">确认保证拍摄证件的清晰完整</view>
+	</view>
+	<view class="cardImg_cont">
+		<view class="IDcard" bindtap="frontimage">
+			<image wx:if="{{flage1}}" src="../../images/authentication/icon8.png" mode='widthFix'></image>
+			<image class="iconLmg" src="{{icon1Src}}"></image>
+			<image wx:if="{{!flage1}}" src="{{FilePaths}}" mode='widthFix' class="paths" />
+		</view>
+		<view class="c_img">身份证正面</view>
+		<view class="IDcard" bindtap="backimage">
+			<image wx:if="{{flage2}}" src="../../images/authentication/icon7.png" mode='widthFix'></image>
+			<image class="iconLmg" src="{{icon2Src}}"></image>
+			<image wx:if="{{!flage2}}" src="{{recitePaths}}" mode='widthFix' class="paths" />
+		</view>
+		<view class="c_img">身份证反面</view>
+	</view>
+	<view class="footer">
+		<view class="f_title">注意事项：</view>
+		<view class="f_content1">
+			<view>1.</view>
+			<view>实名认证成功后，身份信息与此账号绑定，不支持撤销和更换</view>
+		</view>
+		<view class="f_content2">
+			<view>2.</view>
+			<view>请保证身份证照片清晰完整，无任何遮挡，同时避免照片反光。</view>
+		</view>
+		<view class="f_content3">
+			<view>3.</view>
+			<view>请尽量让身份证照占满屏幕，并且漏出身份证边缘。</view>
+		</view>
+		<view class="f_content4">
+			<view>4.</view>
+			<view>根据国家法律法规规定，您正在使用实名认证服务，您授权四川格德智汇科技有限公司及合作方在实名认证过程中采集您的个人身份证信息，视频图像信息，面部特征（静态或动态）信息，我们将确保对本次采集到的信息履行相应的安全保障义务。</view>
+		</view>
+	</view>
+	<button class="next_step" bindtap="pageJump">保存</button>
+</view>

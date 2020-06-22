@@ -1,0 +1,22 @@
+/* pages/evaluate/online-evaluate/evaluation-comment/index.wxss */
+.plan-list{
+  padding:5px 10px;
+  font-size: 14px;
+}
+.indicators-list{
+  font-size: 14px;
+  padding:5px 10px;
+}
+.rate-class{
+  margin-left:1rem;
+  position: relative;
+  top:6px;
+}
+.rate-score{
+  padding-left:0.5rem;
+  font-size:14px;
+  color:#f60;
+}
+.description{
+  background-color: #eee;
+}

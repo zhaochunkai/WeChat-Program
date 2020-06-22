@@ -1,0 +1,20 @@
+<view class="studentBasicInfo">
+	<view class="item">
+		<view class="title">考勤统计</view>
+		<van-cell-group>
+			<van-field value="{{myDetail.cumulativeTime}}" label="累计学时：" readonly />
+      <van-field value="{{myDetail.shouldParticipate}}" label="应参加次数：" readonly />
+      <van-field value="{{myDetail.actualParticipation}}" label="实际参加次数：" readonly />
+      <van-field value="{{myDetail.late}}" label="迟到次数：" readonly />
+		</van-cell-group>
+	</view>
+  <view class="item">
+		<view class="title">学习记录</view>
+		<van-cell-group wx:for="{{myDetail.learningRecord}}" wx:key="index">
+      <view style="text-align: center;font-weight: 600;font-size: 15px;margin-top: 20rpx;">{{item.liveName}}</view>
+      <van-field value="{{item.courseName}}" label="课程：" readonly />
+      <van-field value="{{item.liveTime}}" label="直播时长：" readonly />
+      <van-field value="{{item.watchTime}}" label="观看时长：" readonly />
+		</van-cell-group>
+	</view>
+</view>

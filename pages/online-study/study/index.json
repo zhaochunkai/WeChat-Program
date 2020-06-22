@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-card": "/ui-lib/vant/card/index",
+    "van-tag": "/ui-lib/vant/tag/index"
+  },
+  "navigationBarTitleText": "在线学习"
+}

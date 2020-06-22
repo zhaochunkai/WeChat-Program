@@ -1,0 +1,26 @@
+<!--pages/my/personalDetails/index.wxml-->
+<view class="myInfo">
+	<view class="header">
+		<view class="headerImg">
+			<image src="{{userInfo.avatarUrl}}"></image>
+		</view>
+	</view>
+	<view class="main">
+		<van-cell-group>
+			<van-field value="{{ studentInfo.name }}" readonly label="姓名" />
+			<van-field wx:for="{{gender}}" wx:key ='index' wx:if="{{item.code == studentInfo.sex}}" value="{{item.name}}" readonly label="性别" />
+			<van-field value="{{ studentInfo.idCard }}" readonly label="身份证" />
+			<van-field value="{{ studentInfo.birthday }}" readonly label="出生日期" />
+			<van-field value="{{ studentInfo.tel }}" readonly label="联系电话" />
+      <van-field wx:for="{{actions}}" wx:key ='index' wx:if="{{item.code == studentInfo.education}}" value="{{item.name}}" readonly label="学历" />
+			<van-field value="{{ studentInfo.address }}" readonly label="住址" />
+			<view class="photoWall">
+				<view class="title">照片</view>
+				<image style="width:180rpx;height:180rpx;" src="{{studentInfo.photo}}"></image>
+				<!-- <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" /> -->
+			</view>
+			<van-field value="{{ studentInfo.email }}" readonly label="邮箱" />
+			<van-field value="{{ studentInfo.remarks }}" readonly label="备注" />
+		</van-cell-group>
+	</view>
+</view>
