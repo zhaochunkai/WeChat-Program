@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cos-js-sdk-v5": "^0.5.24"
+    "cos-js-sdk-v5": "^1.4.6"
   }
 }
